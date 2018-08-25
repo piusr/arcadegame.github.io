@@ -12,7 +12,6 @@
  * This engine makes the canvas' context (ctx) object globally available to make 
  * writing app.js a little simpler to work with.
  */
-
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
@@ -23,17 +22,17 @@ var Engine = (function(global) {
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
         lastTime;
-    var  id;
+    var id;
 
-const modal = document.querySelector('.modal-bg');
-const replay = document.querySelector('.modal-button');
+    const modal = document.querySelector('.modal-bg');
+    const replay = document.querySelector('.modal-button');
 
-replay.addEventListener('click', function() {
+    replay.addEventListener('click', function() {
         modal.classList.toggle('hide');
         player.reset();
         player.victory = false;
         win.requestAnimationFrame(main);
-});
+    });
 
     canvas.width = 505;
     canvas.height = 606;
@@ -66,12 +65,13 @@ replay.addEventListener('click', function() {
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
          */
-       if (player.victory === true) {
-       win.cancelAnimationFrame(id);
-       modal.classList.toggle('hide');
-   }
-      else{id = win.requestAnimationFrame(main);}
-     
+        if (player.victory === true) {
+            win.cancelAnimationFrame(id);
+            modal.classList.toggle('hide');
+        } else {
+            id = win.requestAnimationFrame(main);
+        }
+
     }
 
     /* This function does some initial setup that should only occur once,
@@ -106,9 +106,9 @@ replay.addEventListener('click', function() {
      * render methods.
      */
     function updateEntities(dt) {
-         allEnemies.forEach(function(enemy) {
-             enemy.update(dt);
-         });
+        allEnemies.forEach(function(enemy) {
+            enemy.update(dt);
+        });
         player.update();
     }
 
@@ -123,19 +123,19 @@ replay.addEventListener('click', function() {
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/water-block.png', // Top row is water
+                'images/stone-block.png', // Row 1 of 3 of stone
+                'images/stone-block.png', // Row 2 of 3 of stone
+                'images/stone-block.png', // Row 3 of 3 of stone
+                'images/grass-block.png', // Row 1 of 2 of grass
+                'images/grass-block.png' // Row 2 of 2 of grass
             ],
             numRows = 6,
             numCols = 5,
             row, col;
-        
+
         // Before drawing, clear existing canvas
-        ctx.clearRect(0,0,canvas.width,canvas.height)
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
 
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that
