@@ -1,22 +1,29 @@
-Arcade-Game
-===============================
+# Project Title
 
-This is an arcade game. Your mission is to get mark to the other side .
+Arcade-Game- this acade game is part of the projects of the Udacity Frontend Nanodegree.
 
+## Getting Started
 
-###Instructions
-To play the game, use the UP, DOWN, LEFT and RIGHT Arrow keys on your key board to avoid being hit by the enemies.
+You can fork this repository to your local computer.
 
+### Prerequisites
 
-
-###Instructions
-
-To play the game, use the UP, DOWN, LEFT and RIGHT Arrow keys on your key board to avoid being hit by the enemies.
+No special requirments to run this game. Just launch the index.html file in your favourite browser.
 
 
-###Link
 
-You can fork it to play the game.
+
+### How to Play
+
+To play the game, use the UP, DOWN, LEFT and RIGHT Arrow keys on your key board to move your player in all sides of the screen.
+Your mission is to get Mark to the river and avoid being hit by the enemies.
+
+
+
+
+
+### Link
+
 You can also play the game through this link.
 
-https://piusr.github.io/arcadegame.github.io/ 
+https://piusr.github.io/arcadegame.github.io/
